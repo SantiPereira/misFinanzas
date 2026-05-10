@@ -14,20 +14,53 @@
 
         <!--& Contenido Principal -->
         <main class="container_data">
-            <header>
-                <h1>Resumen General</h1>
-                <div class="user-info">Sueldo: $33.000 UYU</div> <!-- !Esto lo tiene que ingrsar el user-->
-                <div class="user-info">Ingreos Extra: $15.000 UYU</div> <!-- !Esto lo tiene que ingrsar el user-->
-            </header>
-
-            <!--& Grid de Tarjetas de Estado -->
-            <section class="container_principal">
-                <div class="card">
-                    <h3>Progreso Auto</h3>
-                    <p>Meta: $92.000</p> <!-- *Crear un sistema de colores para que sea mas visual ademas de verlo en varias monedas y ve el faltante paa llega a ala meta  -->
-                    <div class="progress-bar"></div>
+            <h2>Datos General</h2>
+            <!--^Contender donde vemos un resumen de nuestroes ingresos e metas -->
+            <div class="container_resumen">
+                <div class="card_iqz">
+                    <div class="globo_sueldo">
+                        <span>Sueldo Neto:</span>
+                        <strong>$33.000</strong>
+                    </div>
+                    <div class="globo_ingresos_extra">
+                        <span>Ingreos Extra:</span>
+                        <strong>$15.000</strong>
+                    </div>
+                    <div class="globo_limite_tarjeta">
+                        <span>Limite Santander:</span>
+                        <strong>$20.000</strong>
+                    </div>
+                    <div class="globo_limite_tarjeta">
+                        <span>Limite OCA:</span>
+                        <strong>$10.000</strong>
+                    </div>
                 </div>
 
+                <div class="card_der">
+                    <div class="globo_ahorro_car">
+                        <span>Ahorro:</span>
+                        <strong>$0.0</strong>
+                        <span>Meta:</span>
+                        <strong>$100.000</strong>
+                    </div>
+                    <div class="globo_ahorro_gen">
+                        <span>Ahorro:</span>
+                        <strong>$300</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!--^Espacio para ver detalles de gasots generles-->
+            <!--!hacer que el user peuda elegir que ver y que no--->
+            <div class="card"> 
+                <h2>Resumen General</h2>
+                <p>Santander: Agosto (Libre)</p>
+                <p>OCA: Octubre (Libre)</p>
+                <p>Gatos Mansuales</p>
+                <p>Nafta</p>
+            </div>
+
+            <section class="container_principal">
                 <h2>Historial Movimientos</h2>
                 <table id="tabla_mov_gen">
                     <thead>
@@ -55,15 +88,6 @@
                         </tr>
                 </tbody>
                 </table>
-
-                <div class="card"> <!--^Espacio para ver detalles de gasots generles , hacer que el user peuda elegir que ver y que no-->
-                    <h3>Detalles</h3>
-                    <p>Santander: Agosto (Libre)</p>
-                    <p>OCA: Octubre (Libre)</p>
-                    <p>Gatos Mansuales</p>
-                    <p>Nafta</p>
-                </div>
-            </section>
 
             <!--& Formulario de Ingreso de Gastos -->
             <!-- <section class="input-area">

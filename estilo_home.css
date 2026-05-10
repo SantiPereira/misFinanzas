@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 /**--------------------- **/
 
+
 * {
     margin: 0 ;
     padding: 0 ;
@@ -26,10 +27,9 @@ body{
     min-height: 100vh ;
 }
 
-.container_data{
-    flex: 1 ;
-    padding: 30px ;
-}
+/*^-------------------------------------------------------*/
+                    /*^MENU LATERAL*/
+/*^-------------------------------------------------------*/
 
 .container_lateral{
     height: auto;
@@ -132,3 +132,33 @@ body{
     transform: translateY(2px) ;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) ;
     }
+
+/*^-------------------------------------------------------*/
+                /*^CONTENEDOR PRINCIPAL*/
+/*^-------------------------------------------------------*/
+
+.container_data{
+    flex: 1 ;
+    padding: 30px ;
+}
+
+    .container_data h2{
+        font-family: "Merriweather Sans", sans-serif ;
+        font-size: 23px ;
+        text-transform: uppercase ;
+        letter-spacing: 2px ;
+        color: #DB1A1A ;
+        border-bottom: 1px solid #DB1A1A ;
+        padding-bottom: 6px ;
+        margin-bottom: 30px ;
+    }
+
+.container_resumen{
+    display: flex ;
+    gap: 40px ; 
+    padding: 10px ;
+}
+
+.card_izq , .card_der{
+    flex: 1 ;
+}
