@@ -1,0 +1,134 @@
+/**Tipografias*/
+    /*&font-family: "Intel One Mono", monospace;
+@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+    /*&font-family: "Outfit", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    /*&font-family: "Merriweather Sans", sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+/**--------------------- **/
+
+* {
+    margin: 0 ;
+    padding: 0 ;
+    box-sizing: border-box ;
+}
+
+body{
+    font-family: "Intel One Mono", monospace ;
+    /*background: #E8EDF2 ;*/
+    background: #F0F2F5 ;
+    color: #1C1E21 ;
+}
+
+.container_world{
+    display: flex ;
+    flex-direction: row ;
+    min-height: 100vh ;
+}
+
+.container_data{
+    flex: 1 ;
+    padding: 30px ;
+}
+
+.container_lateral{
+    height: auto;
+    width: 210px ;
+    padding: 30px 20px ;
+    padding-top: 20px ;
+    background: #DB1A1A; /*#BBD5DA*/ 
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05) ;
+    /*border-radius: 0 30px 30px 0;*/ 
+}
+
+    .container_lateral form{
+        display: flex ;
+        flex-direction: column ;
+        gap: 15px ;
+        margin-top: 20px ;
+    }
+
+    .title_reg_ge{
+        font-family: "Merriweather Sans" ; 
+        color: #F5F7F8 ;
+        font-size: 15px ;
+        text-align: center ;
+        border-bottom: 0.5px solid white ;
+        padding-bottom: 6px ;
+        /*border-bottom: 1px solid rgba(255, 255, 255, 0.2) ; */ 
+        text-transform: uppercase ;
+        letter-spacing: 1px ;
+    }
+
+    .style_input_lateral{
+        border: none ;
+        background: none ;
+        border-bottom: 0.75px solid rgba(245, 247, 248, 0.4) ;
+        color: #F5F7F8;
+        padding: 0.5px ;
+        font-size: 14px ;
+        transition: border-bottom 0.14s ease ;
+    }
+
+    .style_input_lateral::placeholder{
+        color: rgba(245, 247, 248, 0.5) ;
+    }
+
+    .style_input_lateral:focus{
+        outline: none ;
+        box-shadow: 0px 4px 8px -4px rgba(255, 255, 255, 0.3) ;
+        border-bottom: 1.5px solid #F5F7F8 ;
+    }
+
+    .style_input_lateral option{
+    background-color: #A31313 ;
+    color: #F5F7F8 ;
+    padding: 10px ;
+    font-family: "Intel One Mono", monospace ;
+    font-size: 13px ;
+    } 
+
+    .style_input_lateral option:hover,
+    .style_input_lateral option:focus,
+    .style_input_lateral option:active {
+        background-color: white !important;
+        color: #DB1A1A !important;  
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }   
+
+    input[type=number] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+}
+
+    .container_lateral button {
+    margin-top: 25px ;
+    background: #F5F7F8 ; 
+    color: #DB1A1A ; 
+    border: none ;
+    padding: 8px ;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700 ;
+    font-size: 10px ;
+    text-transform: uppercase ;
+    letter-spacing: 1px ;
+    cursor: pointer ;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) ;
+    transition: all 0.2s ease ;
+}
+
+    .container_lateral button:hover {
+        background: white ;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25) ;
+        transform: translateY(-2px) ; 
+    }
+
+    .container_lateral button:active {
+    transform: translateY(2px) ;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2) ;
+    }

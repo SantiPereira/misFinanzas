@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>misFinanzas</title>
+
+    <link rel="icon" href="img/icono_factura_black.png">
+    <link rel="stylesheet" href="estilo_home.css">
+</head>
+<body>
+    
+    <div class="container_world">
+
+        <!--& Contenido Principal -->
+        <main class="container_data">
+            <header>
+                <h1>Resumen General</h1>
+                <div class="user-info">Sueldo: $33.000 UYU</div> <!-- !Esto lo tiene que ingrsar el user-->
+                <div class="user-info">Ingreos Extra: $15.000 UYU</div> <!-- !Esto lo tiene que ingrsar el user-->
+            </header>
+
+            <!--& Grid de Tarjetas de Estado -->
+            <section class="container_principal">
+                <div class="card">
+                    <h3>Progreso Auto</h3>
+                    <p>Meta: $92.000</p> <!-- *Crear un sistema de colores para que sea mas visual ademas de verlo en varias monedas y ve el faltante paa llega a ala meta  -->
+                    <div class="progress-bar"></div>
+                </div>
+
+                <h2>Historial Movimientos</h2>
+                <table id="tabla_mov_gen">
+                    <thead>
+                        <tr>
+                            <th>Detalle</th>
+                            <th>Monto</th>
+                            <th>Categorias</th>
+                            <th>Cuotas</th>
+                            <th>Medio de pago</th>
+                            <th>Accion</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="cuerpo-tabla">
+                        <tr>
+                            <td>Servicos extras</td>
+                            <td>$1.000</td>
+                            <td>Personal</td>
+                            <td>1</td>
+                            <td>$1.500</td>
+                            <td>
+                                <button class="btn-borrar">🗑️</button>
+                                <button class="btn-edit">✏️</button>
+                            </td>
+                        </tr>
+                </tbody>
+                </table>
+
+                <div class="card"> <!--^Espacio para ver detalles de gasots generles , hacer que el user peuda elegir que ver y que no-->
+                    <h3>Detalles</h3>
+                    <p>Santander: Agosto (Libre)</p>
+                    <p>OCA: Octubre (Libre)</p>
+                    <p>Gatos Mansuales</p>
+                    <p>Nafta</p>
+                </div>
+            </section>
+
+            <!--& Formulario de Ingreso de Gastos -->
+            <!-- <section class="input-area">
+                <h2>Registrar Gasto</h2>
+                <form id="gasto-form">
+                    <input type="text" placeholder="Detalle (ej: Nafta)">
+                    <input type="number" placeholder="Monto">
+                    <select>  !Falta considerar la opc de ingresar nuevos ingresos
+                        <option>Comida</option>
+                        <option>Auto</option>
+                        <option>Salida</option>
+                        <option">Personal</option>
+                    </select>
+                    <input type="number" name="cuotas" placeholder="Coutas">
+                    <button type="submit">Agregar</button>  *Cambar boton a icono 
+                </form>
+            </section> -->
+        </main>
+
+            <!--& Menú Lateral  -->
+        <aside class="container_lateral">
+            <h2 class="title_reg_ge">Cargar Movimiento</h2>
+            <form>
+                <input class="style_input_lateral" type="text" placeholder="Detalle (ej: Nafta)">
+                <input class="style_input_lateral" type="number" placeholder="Monto">
+                <select class="style_input_lateral">
+                    <option>Combustible</option>
+                    <option>Auto</option>
+                    <option>Comida</option>
+                    <option>Salida</option>
+                    <option>Personal</option>
+                    <option>Ingreso Dinero</option>
+                </select>
+                <input class="style_input_lateral" type="number" name="cuotas" placeholder="Coutas">
+                <button type="submit">Agregar</button> <!-- *Cambar boton a icono -->
+            </form>
+        </aside>
+    </div>
+
+    <script src="cerebro.js"></script>
+</body>
+</html>
