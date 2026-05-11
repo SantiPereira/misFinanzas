@@ -17,35 +17,44 @@
             <h2>Datos General</h2>
             <!--^Contender donde vemos un resumen de nuestroes ingresos e metas -->
             <div class="container_resumen">
-                <div class="card_iqz">
-                    <div class="globo_sueldo">
+                <div class="card_izq">
+                    <div class="globo_sueldo style_globo">
                         <span>Sueldo Neto:</span>
                         <strong>$33.000</strong>
                     </div>
-                    <div class="globo_ingresos_extra">
+                    <div class="globo_ingresos_extra style_globo">
                         <span>Ingreos Extra:</span>
                         <strong>$15.000</strong>
                     </div>
-                    <div class="globo_limite_tarjeta">
+                    <div class="globo_limite_tarjeta style_globo">
                         <span>Limite Santander:</span>
                         <strong>$20.000</strong>
                     </div>
-                    <div class="globo_limite_tarjeta">
+                    <div class="globo_limite_tarjeta style_globo">
                         <span>Limite OCA:</span>
                         <strong>$10.000</strong>
                     </div>
                 </div>
 
                 <div class="card_der">
-                    <div class="globo_ahorro_car">
-                        <span>Ahorro:</span>
-                        <strong>$0.0</strong>
-                        <span>Meta:</span>
-                        <strong>$100.000</strong>
+                    <div class="globo_ahorro_car style_globo">
+                        <span class="etiqueta_objetivo">Objetivo: Auto</span>
+                        <div class="fila_ahorro">
+                            <span>Ahorro:</span>
+                            <strong>$0.0</strong>
+                        </div>
+                        <div class="fila_ahorro">
+                            <span>Meta:</span>
+                            <strong class="color_meta">$100.000</strong>
+                        </div>
                     </div>
-                    <div class="globo_ahorro_gen">
-                        <span>Ahorro:</span>
-                        <strong>$300</strong>
+
+                    <div class="globo_ahorro_gen style_globo">
+                        <span class="etiqueta_objetivo">Fondo General</span>
+                        <div class="fila_ahorro">
+                            <span>Ahorro:</span>
+                            <strong>$300</strong>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,8 +65,9 @@
                 <h2>Resumen General</h2>
                 <p>Santander: Agosto (Libre)</p>
                 <p>OCA: Octubre (Libre)</p>
-                <p>Gatos Mansuales</p>
-                <p>Nafta</p>
+                <p>Gatos Mansuales: $1.000</p>
+                <p>Nafta: $500</p>
+                <p>Salidas: $2.000</p>
             </div>
 
             <section class="container_principal">
@@ -74,13 +84,60 @@
                         </tr>
                     </thead>
 
-                    <tbody id="cuerpo-tabla">
+                    <tbody id="cuerpo_tabla1">
                         <tr>
                             <td>Servicos extras</td>
                             <td>$1.000</td>
                             <td>Personal</td>
                             <td>1</td>
+                            <td>OCA</td>
+                            <td>
+                                <button class="btn-borrar">🗑️</button>
+                                <button class="btn-edit">✏️</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Supermercado Tienda Inglesa</td>
+                            <td>$4.500</td>
+                            <td>Comida</td>
+                            <td>1</td>
+                            <td>Santander</td>
+                            <td>
+                                <button class="btn-borrar">🗑️</button>
+                                <button class="btn-edit">✏️</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Zapatillas Running</td>
+                            <td>$3.200</td>
+                            <td>Personal</td>
+                            <td>3</td>
+                            <td>OCA</td>
+                            <td>
+                                <button class="btn-borrar">🗑️</button>
+                                <button class="btn-edit">✏️</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Nafta Ancap</td>
+                            <td>$2.800</td>
+                            <td>Auto</td>
+                            <td>1</td>
+                            <td>Efectivo</td>
+                            <td>
+                                <button class="btn-borrar">🗑️</button>
+                                <button class="btn-edit">✏️</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Venta de muebles vieja</td>
                             <td>$1.500</td>
+                            <td>Ingreso Dinero</td>
+                            <td>1</td>
+                            <td>Mercado Pago</td>
                             <td>
                                 <button class="btn-borrar">🗑️</button>
                                 <button class="btn-edit">✏️</button>
@@ -122,6 +179,14 @@
                     <option>Ingreso Dinero</option>
                 </select>
                 <input class="style_input_lateral" type="number" name="cuotas" placeholder="Coutas">
+                <select class="style_input_lateral">
+                    <option>Debito</option>
+                    <option>Efectivo</option>
+                    <option>OCA</option>
+                    <option>Santander</option>
+                    <option>Ahorro Auto</option>
+                    <option>Ahorro Personal</option>
+                </select>
                 <button type="submit">Agregar</button> <!-- *Cambar boton a icono -->
             </form>
         </aside>
@@ -130,3 +195,18 @@
     <script src="cerebro.js"></script>
 </body>
 </html>
+
+
+
+
+<!-- 
+FUNCIONALIDADES A IMPLEMENTAR: 
+1_ Ver ahorros en pesos y dolares 
+2_ Ver limite de tarjetas y cuanto queda disponible
+3_ Ver resumen de gastos por categoria (ej: comida, auto, personal, etc)
+4_Editatar Datos Generales
+5_ Crear la funcionalidad de accion en la tabl de gastos
+6_ Que se guarden los datos de una (crear BD) 
+8_ Extrayendo los datos de la tabla se puedan ver los gastos por tipo de gasto , 
+    categoria en desumen general 
+-->
