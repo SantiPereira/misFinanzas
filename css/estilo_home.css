@@ -151,9 +151,136 @@ body{
         text-transform: uppercase ;
         letter-spacing: 2px ;
         color: #DB1A1A ;
-        border-bottom: 1px solid #DB1A1A ;
-        padding-bottom: 6px ;
-        margin-bottom: 30px ;
+    }
+
+.cabezera_datos_gen{
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+    border-bottom: 1px solid #DB1A1A ;
+    padding-bottom: 6px ;
+    margin-bottom: 30px ;
+}
+
+    .btn_editar_datos{
+        background: none;
+        border: none ; 
+        padding: 6px 12px ;
+        text-transform: uppercase ;
+        letter-spacing: 1px ;
+        border-radius: 4px ;
+        cursor: pointer ;
+        transition: all 0.2s ease ;
+        width: 50px ;
+        height: auto ;
+    }
+
+.modal_oculto{
+    display: none ;
+    position: fixed ; 
+    top: 0 ;
+    left: 0 ;
+    width: 100vw ;  
+    height: 100vh ; 
+    background-color: rgba(0, 0, 0, 0.55) ;
+    backdrop-filter: blur(4px) ; 
+    -webkit-backdrop-filter: blur(4px) ;
+    z-index: 99999 ; 
+    align-items: center ;
+    justify-content: center ;
+}
+
+.modal_visible{
+    display: flex !important ;
+}
+
+    .modal_contenido {
+    background-color: #ffffff ;
+    padding: 30px ; 
+    border-radius: 12px ;
+    width: 90% ;
+    max-width: 480px ;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15) ;
+    position: relative ;
+    font-family: "Intel One Mono", monospace ;
+    animation: aparecerModal 0.3s ease-out;
+}
+
+    .modal_contenido h3 {
+        font-family: "Merriweather Sans", sans-serif ;
+        color: #DB1A1A ;
+        font-size: 20px ;
+        text-transform: uppercase ;
+        margin-bottom: 20px ;
+        text-align: center ;
+    }
+
+    #btn_cerrar_modal {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s ease;
+    user-select: none;
+    }
+    #btn_cerrar_modal:hover {
+        color: #DB1A1A;
+    }
+
+    .grupo_input {
+        display: flex ;
+        flex-direction: column ;
+        gap: 5px ;
+        margin-bottom: 15px ;
+    }
+
+    .grupo_input label {
+        font-size: 12px ;
+        color: #666 ;
+    }
+
+    .grupo_input input {
+        padding: 8px ; 
+        border: 1px solid #ddd ;
+        border-radius: 6px ;
+        font-family: "Intel One Mono", monospace ;
+    }
+
+    .btn_guardar_modal {
+        width: 100% ;
+        background: #DB1A1A ;
+        color: white ; 
+        border: none ;
+        padding: 10px ;
+        font-weight: 700 ;
+        border-radius: 6px ;
+        cursor: pointer ;
+        text-transform: uppercase ;
+        font-size: 11px ;
+        letter-spacing: 1px ;
+        margin-top: 10px ;
+    }
+
+    .btn_guardar_modal:hover {
+        background-color: #b51212;
+    }
+    
+    .btn_guardar_modal:active {
+        transform: scale(0.98); /* Efecto de hundimiento al clickear */
+    }
+
+
+    @keyframes aparecerModal {
+        from {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
 .container_resumen{
@@ -232,7 +359,7 @@ body{
 }
 
 /*^-------------------------------------------------------*/
-                /*^TABLA DE HISTORIAL DE MOVIMIENTOS*/
+            /*^TABLA DE HISTORIAL DE MOVIMIENTOS*/
 /*^-------------------------------------------------------*/
 #tabla_mov_gen {
     width: 100% ;

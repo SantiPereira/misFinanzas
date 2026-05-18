@@ -6,7 +6,7 @@
     <title>misFinanzas</title>
 
     <link rel="icon" href="img/icono_factura_black.png">
-    <link rel="stylesheet" href="estilo_home.css">
+    <link rel="stylesheet" href="css/estilo_home.css">
 </head>
 <body>
     
@@ -14,25 +14,57 @@
 
         <!--& Contenido Principal -->
         <main class="container_data">
-            <h2>Datos General</h2>
+            <div class="cabezera_datos_gen">
+                <h2>Datos General</h2>
+                <img src="img/boton-editar.png" alt="btn_editar_datos" id="btn_editar_datos" class="btn_editar_datos">
+            </div>
+
+            <!--^Modal -->
+            <div id="modal_edicion_datos_gen" class="modal_oculto">
+                <div class="modal_contenido">
+                    <h3>Editar Datos Generales</h3>
+                    <span id="btn_cerrar_modal">&times;</span>
+
+                    <form id="form_editar_base">
+                        <div class="grupo_input">
+                            <label>Sueldo Neto:</label>
+                            <input type="number" id="edit_sueldo" value="----">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Ingresos Extra:</label>
+                            <input type="number" id="edit_extras" value="----">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Límite Santander:</label>
+                            <input type="number" id="edit_santander" value="----">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Límite OCA:</label>
+                            <input type="number" id="edit_oca" value="-----">
+                        </div>
+                        <button type="submit" class="btn_guardar_modal">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+
             <!--^Contender donde vemos un resumen de nuestroes ingresos e metas -->
             <div class="container_resumen">
                 <div class="card_izq">
                     <div class="globo_sueldo style_globo">
                         <span>Sueldo Neto:</span>
-                        <strong>$33.000</strong>
+                        <strong id="total_sueldo"></strong>
                     </div>
                     <div class="globo_ingresos_extra style_globo">
                         <span>Ingreos Extra:</span>
-                        <strong>$15.000</strong>
+                        <strong id="total_ing_extra"></strong>
                     </div>
                     <div class="globo_limite_tarjeta style_globo">
                         <span>Limite Santander:</span>
-                        <strong>$20.000</strong>
+                        <strong id="limite_santander"></strong>
                     </div>
                     <div class="globo_limite_tarjeta style_globo">
                         <span>Limite OCA:</span>
-                        <strong>$10.000</strong>
+                        <strong id="limite_oca"></strong>
                     </div>
                 </div>
 
@@ -41,11 +73,11 @@
                         <span class="etiqueta_objetivo">Objetivo: Auto</span>
                         <div class="fila_ahorro">
                             <span>Ahorro:</span>
-                            <strong>$0.0</strong>
+                            <strong id="ahorro_auto"></strong>
                         </div>
                         <div class="fila_ahorro">
                             <span>Meta:</span>
-                            <strong class="color_meta">$100.000</strong>
+                            <strong class="color_meta" id="meta_auto"></strong>
                         </div>
                     </div>
 
@@ -53,7 +85,7 @@
                         <span class="etiqueta_objetivo">Fondo General</span>
                         <div class="fila_ahorro">
                             <span>Ahorro:</span>
-                            <strong>$300</strong>
+                            <strong id="ahorro_general"></strong>
                         </div>
                     </div>
                 </div>
@@ -63,11 +95,11 @@
             <!--!hacer que el user peuda elegir que ver y que no--->
             <div class="card"> 
                 <h2>Resumen General</h2>
-                <p>Santander: Agosto (Libre)</p>
-                <p>OCA: Octubre (Libre)</p>
-                <p>Gatos Mansuales: $1.000</p>
-                <p>Nafta: $500</p>
-                <p>Salidas: $2.000</p>
+                <p>Santander:</p> <strong id="gastos_santander"></strong>
+                <p>OCA:</p> <strong id="gastos_oca"></strong>
+                <p>Gatos Mansuales:</p> <strong id="gastos_mensuales"></strong>
+                <p>Nafta:</p> <strong id="gastos_nafta"></strong>
+                <p>Salidas:</p><strong id="gastos_salidas"></strong>
             </div>
 
             <section class="container_principal">
@@ -192,11 +224,9 @@
         </aside>
     </div>
 
-    <script src="cerebro.js"></script>
+    <script type="module" src="js/cerebro.js"></script>
 </body>
 </html>
-
-
 
 
 <!-- 
