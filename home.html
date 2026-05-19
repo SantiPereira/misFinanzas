@@ -28,19 +28,31 @@
                     <form id="form_editar_base">
                         <div class="grupo_input">
                             <label>Sueldo Neto:</label>
-                            <input type="number" id="edit_sueldo" value="----">
+                            <input type="number" id="edit_sueldo" value="0">
                         </div>
                         <div class="grupo_input">
                             <label>Ingresos Extra:</label>
-                            <input type="number" id="edit_extras" value="----">
+                            <input type="number" id="edit_extras" value="0">
                         </div>
                         <div class="grupo_input">
                             <label>Límite Santander:</label>
-                            <input type="number" id="edit_santander" value="----">
+                            <input type="number" id="edit_santander" value="0">
                         </div>
                         <div class="grupo_input">
                             <label>Límite OCA:</label>
-                            <input type="number" id="edit_oca" value="-----">
+                            <input type="number" id="edit_oca" value="0">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Ahorro Auto:</label>
+                            <input type="number" id="edit_ahorro_auto" value="0">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Meta Auto: </label>
+                            <input type="number" id="edit_meta_auto" value="0">
+                        </div>
+                        <div class="grupo_input">
+                            <label>Ahorro General:</label>
+                            <input type="number" id="edit_ahorro_gen" value="0">
                         </div>
                         <button type="submit" class="btn_guardar_modal">Guardar Cambios</button>
                     </form>
@@ -74,10 +86,12 @@
                         <div class="fila_ahorro">
                             <span>Ahorro:</span>
                             <strong id="ahorro_auto"></strong>
+                            <strong id="ahorro_auto_usd"></strong>
                         </div>
                         <div class="fila_ahorro">
                             <span>Meta:</span>
                             <strong class="color_meta" id="meta_auto"></strong>
+                            <strong class="color_meta" id="meta_auto_usd"></strong>
                         </div>
                     </div>
 
@@ -97,7 +111,8 @@
                 <h2>Resumen General</h2>
                 <p>Santander:</p> <strong id="gastos_santander"></strong>
                 <p>OCA:</p> <strong id="gastos_oca"></strong>
-                <p>Gatos Mansuales:</p> <strong id="gastos_mensuales"></strong>
+                <p>Gatos Fijos:</p> <strong id="gastos_fijos"></strong>
+                <p>Gatos Personal:</p> <strong id="gastos_personal"></strong>
                 <p>Nafta:</p> <strong id="gastos_nafta"></strong>
                 <p>Salidas:</p><strong id="gastos_salidas"></strong>
             </div>
@@ -230,9 +245,8 @@
 
 
 <!-- 
-FUNCIONALIDADES A IMPLEMENTAR: 
-1_ Ver ahorros en pesos y dolares 
-2_ Ver limite de tarjetas y cuanto queda disponible
+FUNCIONALIDADES A IMPLEMENTAR:  
+2_ Ver limite de tarjetas y cuanto queda disponible -CASI: FLATA VER EL DISPONIBLE
 3_ Ver resumen de gastos por categoria (ej: comida, auto, personal, etc)
 4_Editatar Datos Generales
 5_ Crear la funcionalidad de accion en la tabl de gastos

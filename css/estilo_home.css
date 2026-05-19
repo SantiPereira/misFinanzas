@@ -336,10 +336,26 @@ body{
     }
 
     .fila_ahorro{
-    display: flex ;
-    justify-content: space-between ;
+    display: grid ;
+    grid-template-columns: 75px 1fr auto ; 
+    align-items: center ;
     width: 100% ;
+    margin-bottom: 5px ;
     }
+
+        .fila_ahorro strong:nth-of-type(1) {
+            text-align: right ;
+            display: block ;
+            width: 100% ;
+            padding-right: 20px ; 
+        }
+
+        #ahorro_auto_usd, #meta_auto_usd {
+            color: #666 ;
+            font-size: 13px ;
+            text-align: right ;
+            min-width: 85px ;
+        }
 
 
 /*DISEÑO CANCELADO - - IGNORE -- 

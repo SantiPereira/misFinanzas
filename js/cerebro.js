@@ -26,7 +26,7 @@ formularioDeIngresoDeMovimientos.addEventListener(`submit` , function(evento){
     }
 
     // Enviamos los datos a finanzas.js para que haga la matemática
-    finanzas.procesarMovimientoFinanciero(monto, tipoDeGasto, medioDePago);
+    // finanzas.procesarMovimientoFinanciero(monto, tipoDeGasto, medioDePago);
 
     // Actualizamos las tarjetas del Home con tus NUEVOS IDs de HTML
     document.getElementById('total_ing_extra').innerText = `$${finanzas.ingresosExtra}`;
@@ -105,21 +105,35 @@ window.addEventListener('click', (event) => {
 
 // Evento para GUARDAR los datos
 if(formModalEdicion) {
-    formModalEdicion.addEventListener('submit', function(event){
+    formModalEdicion.addEventListener('submit', async function(event){
         event.preventDefault() ;
         
         const nuevoSueldo = Number(document.getElementById('edit_sueldo').value) ;
         const nuevoIngExtra = Number(document.getElementById('edit_extras').value) ;
         const nuevoLimiteSantander = Number(document.getElementById('edit_santander').value) ;
         const nuevoLimiteOCA = Number(document.getElementById('edit_oca').value) ;
+        const nuevoAhorroAuto = Number(document.getElementById('edit_ahorro_auto').value) ; 
+        const nuevaMetaAuto = Number(document.getElementById('edit_meta_auto').value) ; 
+        const nuevoAhorroGen = Number(document.getElementById('edit_ahorro_gen').value) ; 
 
-        finanzas.actualizarValoresBase(nuevoSueldo, nuevoIngExtra, nuevoLimiteSantander, nuevoLimiteOCA) ;
+        finanzas.actualizarValoresEnDatosGen(nuevoSueldo, nuevoIngExtra, nuevoLimiteSantander, 
+                                        nuevoLimiteOCA , nuevoAhorroAuto , nuevaMetaAuto , nuevoAhorroGen)  ;
 
-        document.getElementById('total_sueldo').innerText = `$${nuevoSueldo}`;
-        document.getElementById('total_ing_extra').innerText = `$${nuevoIngExtra}`;
-        document.getElementById('limite_santander').innerText = `$${nuevoLimiteSantander}`;
-        document.getElementById('limite_oca').innerText = `$${nuevoLimiteOCA}`;
+        document.getElementById('total_sueldo').innerText = `$${nuevoSueldo.toLocaleString('es-UY')}`;
+        document.getElementById('total_ing_extra').innerText = `$${nuevoIngExtra.toLocaleString('es-UY')}`;
+        document.getElementById('limite_santander').innerText = `$${nuevoLimiteSantander.toLocaleString('es-UY')}`;
+        document.getElementById('limite_oca').innerText = `$${nuevoLimiteOCA.toLocaleString('es-UY')}`;
+        document.getElementById('ahorro_auto').innerText = `$${nuevoAhorroAuto.toLocaleString('es-UY')}` ; 
+        document.getElementById('meta_auto').innerText = `$${nuevaMetaAuto.toLocaleString('es-UY')}` ;
+        document.getElementById('ahorro_general').innerText = `$${nuevoAhorroGen.toLocaleString('es-UY')}` ;
 
         modalEdicion.classList.remove('modal_visible');
+
+        let calAhorroEnDolarAuto = await finanzas.obtenerPrecioDolar(nuevoAhorroAuto) ; 
+        let calMetaEnDolarAuto = await finanzas.obtenerPrecioDolar(nuevaMetaAuto) ; 
+
+        document.getElementById('ahorro_auto_usd').innerText = `$${calAhorroEnDolarAuto}` ;
+        document.getElementById('meta_auto_usd').innerText = `$${calMetaEnDolarAuto}` ;
+
     });
 }
